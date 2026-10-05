@@ -1,4 +1,8 @@
 node {
+    stage('Checkout') {
+        checkout scm
+    }
+
     stage('Test') {
         sh 'docker build --network host -f Dockerfile.test -t todoapp-tests .'
     }
